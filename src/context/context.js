@@ -2,9 +2,9 @@ import { createContext, useState } from 'react';
 
 //dummy data just for testing purproses
 const initialUserData = {
-  username: 'User192382384',
-  password: 'eheheh',
-  isLogged: true
+  username: '',
+  password: '',
+  isLogged: false
 };
 
 const initialPosts = [
