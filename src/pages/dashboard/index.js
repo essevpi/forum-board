@@ -12,10 +12,10 @@ const Dashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
 
-  /* useEffect(() => {
+  useEffect(() => {
     if (userData.isLogged == false)
       router.push('/');  
-  }, []); */
+  }, []);
 
   const handleModal = () => {
     setIsModalOpen(!isModalOpen);    

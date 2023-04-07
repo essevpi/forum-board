@@ -32,14 +32,10 @@ export default function Home() {
     router.push('/dashboard');
   };
 
-  const resetForm = (e) => {
-    setUserData({ initialFormData });
-  };
-
   return (
     <main className={`${font.className} flex h-[calc(100vh-var(--nav-height))] justify-center items-center`}>
       <div className='container flex flex-col items-center'>
-        <LoginForm onSubmit={handleSubmit} handleReset={resetForm}>
+        <LoginForm onSubmit={handleSubmit}>
           <InputField
             value={userData.username}
             name='username'
