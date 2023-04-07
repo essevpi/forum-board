@@ -1,26 +1,27 @@
 import { createContext, useState } from 'react';
 
+//dummy data just for testing purproses
 const initialUserData = {
-  username: '',
-  password: '',
-  isLogged: false
+  username: 'User192382384',
+  password: 'eheheh',
+  isLogged: true
 };
 
 const initialPosts = [
   {
     title: 'Post 1',
-    post: 'Some long desc1 Some long desc1 Some long desc1 Some long desc1 Some long desc1 ',
-    creator: 'User1'
+    content: 'Some long desc1 Some long desc1 Some long desc1 Some long desc1 Some long desc1 ',
+    author: 'User1'
   },
   {
     title: 'Post 2',
-    post: 'Some long desc2 Some long desc2 Some long desc2 Some long desc2 Some long desc2 ',
-    creator: 'User2'
+    content: 'Some long desc2 Some long desc2 Some long desc2 Some long desc2 Some long desc2 ',
+    author: 'User2'
   },
   {
     title: 'Post 3',
-    post: 'Some long desc3 Some long desc3 Some long desc3 Some long desc3 Some long desc3 ',
-    creator: 'User3'
+    content: 'Some long desc3 Some long desc3 Some long desc3 Some long desc3 Some long desc3 ',
+    author: 'User3'
   },
 ]
 

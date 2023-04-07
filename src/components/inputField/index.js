@@ -1,17 +1,21 @@
 import styles from './InputField.styles.js';
 
-const InputField = ({ value, name, onInputChange }) => {
+const InputField = ({ value, name, type, onInputChange, required, textArea }) => {
+  let CustomTag = textArea ? 'textarea' : 'input';
+
   return (
     <div className='flex flex-col'>
-      <label className='p-1' htmlFor={name}>
+      <label className='text-md font-medium ml-1' htmlFor={name}>
         {/* {name.charAt(0).toUpperCase() + name.slice(1)} */}
         {name.toUpperCase()}
       </label>
-      <input
+      <CustomTag
+        type={type ? `${type}` : 'text'}
+        required={required ? true : false}
         value={value}
         name={name}
         onChange={onInputChange}
-        className={styles.input}
+        className={`${styles.input} ${textArea ? 'max-h-64' : ''}`}
       />
     </div>
   );

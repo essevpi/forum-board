@@ -1,6 +1,6 @@
-import Button from '../Button';
+import Button from '../button';
 
-const Form = ({ children, onSubmit, handleReset }) => {
+const LoginForm = ({ children, onSubmit, handleReset }) => {
   return (
     <form
       onSubmit={onSubmit}
@@ -9,16 +9,16 @@ const Form = ({ children, onSubmit, handleReset }) => {
       {children}
       <div className='flex flex-1 gap-2 items-center'>
         <Button
-          text='Reset'
+          content='Reset'
           type='reset'
           variant='secondary'
           onClick={handleReset}
           canClick
         />
-        <Button text='Submit' variant='primary' />
+        <Button content='Submit' variant='primary' />
       </div>
     </form>
   );
 };
 
-export default Form;
+export default LoginForm;

@@ -28,12 +28,12 @@ const UserInfo = ({ user }) => {
   };
 
   return (
-    <div className='flex items-center gap-2 w-full'>
+    <div className='flex items-center gap-3 w-full'>
       <div className='flex flex-col flex-1'>
-        <span className='text-xl md:text-3xl'>{user.username}</span>
+        <span className='text-lg md:text-xl'>{user.username}</span>
         <span className='text-xs text-neutral-400 text-end'>Log Out</span>
       </div>
-      <div className='relative border-2 border-lime-300 rounded-full'>
+      <div className='relative ring-2 ring-lime-300 rounded-full'>
         <Image
           src={avatarSrc}
           loader={avatarLoader}

@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { Montserrat } from 'next/font/google';
-import Form from '@/components/form';
+import LoginForm from '@/components/loginForm';
 import InputField from '@/components/inputField';
 import { UserContext } from '@/context/context';
 
@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <main className={`${font.className} flex h-[calc(100vh-var(--nav-height))] justify-center items-center`}>
       <div className='container flex flex-col items-center'>
-        <Form onSubmit={handleSubmit} handleReset={resetForm}>
+        <LoginForm onSubmit={handleSubmit} handleReset={resetForm}>
           <InputField
             value={userData.username}
             name='username'
@@ -50,7 +50,7 @@ export default function Home() {
             name='password'
             onInputChange={onInputChange}
           />
-        </Form>
+        </LoginForm>
       </div>
     </main>
   );

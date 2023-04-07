@@ -12,6 +12,18 @@ const styles = {
       duration-300
       hover:bg-lime-600
     `,
+    'primary-rounded': `
+      w-full
+      p-1
+      text-black
+      font-bold
+      uppercase
+      rounded-full          
+      bg-lime-300      
+      transition
+      duration-300
+      hover:bg-lime-600
+    `,
     secondary: `
       w-full
       p-1

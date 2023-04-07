@@ -6,9 +6,9 @@ const styles = {
     rounded-md
     outline-none
     bg-neutral-900
+    hover:bg-neutral-900
     border
     border-transparent
-    focus:bg-[--background-color]
     focus:border-lime-300
     transition duration-300
   `

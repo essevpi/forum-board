@@ -5,6 +5,7 @@
 :root {
   --background-color: #121212;
   --text-color: #fff;
+  --modal-background-color: rgba(0, 0, 0, 0.4);
   --nav-height: 5rem;
 }
 
@@ -36,10 +37,10 @@ body {
   }
 
   h5 {
-    @apply text-xl font-light;
+    @apply text-xl font-medium;
   }
 
   h6 {
-    @apply text-lg font-extralight;
+    @apply text-lg font-light;
   }
 }
