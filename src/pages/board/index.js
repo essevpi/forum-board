@@ -6,7 +6,6 @@ import Link from 'next/link';
 import PostList from '@/components/postList';
 import Button from '@/components/button';
 import Modal from '@/components/modal';
-import shortUUID from 'short-uuid';
 import { initialPosts } from '@/context/dummyData';
 
 const Dashboard = () => {
@@ -15,10 +14,11 @@ const Dashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
 
-  /* useEffect(() => {
-    setPosts(posts.map(post => ({ ...post })));
-  }, []) */
+  useEffect(() => {
+    setPosts(JSON.parse(localStorage.getItem('posts')));
+  }, []);
 
+  /* redirect to home if not logged - dev only */
   /* useEffect(() => {
     if (userData.isLogged == false)
       router.push('/');  
@@ -29,12 +29,12 @@ const Dashboard = () => {
   };
 
   return (
-    <div className='container flex flex-col gap-4 p-4 bg-neutral-900 sm:bg-neutral-800 sm:border sm:border-neutral-700 sm:rounded-md'>
+    <div className='container flex flex-col self-stretch gap-4 p-4 bg-neutral-900 sm:bg-neutral-800 sm:border sm:border-neutral-700 sm:rounded-md'>
       <div className='flex w-full justify-between items-end border-b border-neutral-700 pb-4'>
         <span className='flex-1 text-lg md:text-2xl font-bold leading-none'>
           Posts
         </span>
-        <div className='w-1/5'>
+        <div className='sm:w-1/5'>
           <Button
             content='New Post'
             type='button'
@@ -44,7 +44,11 @@ const Dashboard = () => {
           />
         </div>
       </div>
-      <PostList posts={posts} />
+      {posts?.length > 0 ? (
+        <PostList posts={posts} />
+      ) : (
+        <p className='italic'>No posts yet</p>
+      )}
       {isModalOpen && <Modal title='Create Post' handleClose={handleModal} />}
     </div>
   );

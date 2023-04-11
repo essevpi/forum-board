@@ -1,6 +1,14 @@
 import styles from './InputField.styles.js';
 
-const InputField = ({ value, name, type, onInputChange, required, textArea }) => {
+const InputField = ({
+  value,
+  name,
+  type,
+  onInputChange,
+  required,
+  textArea,
+  textAreaStyle
+}) => {
   let CustomTag = textArea ? 'textarea' : 'input';
 
   return (
@@ -15,7 +23,9 @@ const InputField = ({ value, name, type, onInputChange, required, textArea }) =>
         value={value}
         name={name}
         onChange={onInputChange}
-        className={`${styles.input} ${textArea ? 'max-h-64' : ''}`}
+        className={`${styles.input} ${textArea ? 'max-h-64' : ''} ${
+          textAreaStyle ? textAreaStyle : ''
+        }`}
       />
     </div>
   );

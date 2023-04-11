@@ -6,18 +6,12 @@ import InputField from '@/components/inputField';
 import { PostsContext, UserContext } from '@/context/context';
 import { initialPosts } from '@/context/dummyData';
 
-const font = Montserrat({ subsets: ['latin'] });
-
 export default function Home() {
   const { userData, setUserData } = useContext(UserContext);
   const { posts, setPosts } = useContext(PostsContext);
   const router = useRouter();
 
-  const initialFormData = {
-    username: '',
-    password: '',
-  };
-
+  
   const onInputChange = (e) => {
     setUserData({
       ...userData,

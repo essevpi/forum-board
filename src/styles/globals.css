@@ -9,10 +9,10 @@
   --nav-height: 5rem;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
   }
-}
+} */
 
 body {
   color: var(--text-color);

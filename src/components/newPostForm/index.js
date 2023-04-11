@@ -4,9 +4,9 @@ import InputField from '../inputField/index.js';
 import { PostsContext, UserContext } from '@/context/context.js';
 import shortUUID from 'short-uuid';
 
-import styles from './CreatePostForm.styles.js';
+import styles from './NewPostForm.styles.js';
 
-const CreatePostForm = ({ closeOnSubmit }) => {
+const NewPostForm = ({ closeOnSubmit }) => {
   const { posts, setPosts } = useContext(PostsContext);
   const { userData } = useContext(UserContext);
 
@@ -25,8 +25,12 @@ const CreatePostForm = ({ closeOnSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let newPost = { ...formData, id: shortUUID.generate() };
+    let newPost = { ...formData, id: shortUUID.generate(), comments: [] };
+    let posts = JSON.parse(localStorage.getItem('posts')) || [];
+    let updatedPosts = posts.concat(newPost);
+
     setPosts(posts.concat(newPost));
+    localStorage.setItem('posts', JSON.stringify(updatedPosts));
     closeOnSubmit();
   };
 
@@ -54,4 +58,4 @@ const CreatePostForm = ({ closeOnSubmit }) => {
   );
 };
 
-export default CreatePostForm;
+export default NewPostForm;

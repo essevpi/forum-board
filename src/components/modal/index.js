@@ -1,5 +1,5 @@
 import Button from '../button';
-import CreatePostForm from '../createPostForm';
+import NewPostForm from '../newPostForm';
 import { IoClose } from 'react-icons/io5';
 
 const Modal = ({ title, handleClose }) => {
@@ -24,8 +24,8 @@ const Modal = ({ title, handleClose }) => {
             />
           </div>
         </div>
-        <div classname='mt-2'>
-          <CreatePostForm closeOnSubmit={handleClose} />
+        <div className='mt-2'>
+          <NewPostForm closeOnSubmit={handleClose} />
         </div>
       </div>
     </div>
