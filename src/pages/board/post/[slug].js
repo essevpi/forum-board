@@ -55,7 +55,7 @@ const Post = () => {
           <span className='text-neutral-400'>Posted by {post?.author}</span>
         </div>
       </div>
-      <article className='h-full border-y border-neutral-700 py-4'>
+      <article className='h-full border-y border-neutral-700 py-4 px-2'>
         {post?.content}
       </article>
       {/* COMMENTS */}
