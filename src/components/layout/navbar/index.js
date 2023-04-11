@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <div className='h-[--nav-height] flex items-center justify-center bg-neutral-800'>
-      <div className='container h-full w-11/12 h-4/5 sm:w-3/4 lg:w-1/2 flex items-center justify-between'>
+      <div className='container lg:w-3/4 2xl:w-1/2 px-4 h-full flex items-center justify-between sm:p-0'>
         <div>
           <span className='text-2xl uppercase'>Blackboard</span>
         </div>

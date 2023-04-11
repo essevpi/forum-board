@@ -1,35 +1,12 @@
 import { createContext, useState } from 'react';
-
-//dummy data just for testing purproses
-const initialUserData = {
-  username: '',
-  password: '',
-  isLogged: false
-};
-
-const initialPosts = [
-  {
-    title: 'Post 1',
-    content: 'Some long desc1 Some long desc1 Some long desc1 Some long desc1 Some long desc1 ',
-    author: 'User1'
-  },
-  {
-    title: 'Post 2',
-    content: 'Some long desc2 Some long desc2 Some long desc2 Some long desc2 Some long desc2 ',
-    author: 'User2'
-  },
-  {
-    title: 'Post 3',
-    content: 'Some long desc3 Some long desc3 Some long desc3 Some long desc3 Some long desc3 ',
-    author: 'User3'
-  },
-]
+import { initialPosts, initialUser } from './dummyData';
+import shortUUID from 'short-uuid';
 
 export const UserContext = createContext(null);
 export const PostsContext = createContext(null);
 
 const Providers = ({ children }) => {
-  const [userData, setUserData] = useState(initialUserData);
+  const [userData, setUserData] = useState(initialUser);
   const [posts, setPosts] = useState(initialPosts);
 
   return (

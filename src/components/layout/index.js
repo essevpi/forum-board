@@ -1,10 +1,11 @@
-import Navbar from '../navbar';
+import Navbar from './navbar';
+import MainContainer from './mainContainer';
 
 const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
-      {children}
+      <MainContainer>{children}</MainContainer>
     </>
   );
 };

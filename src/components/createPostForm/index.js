@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import Button from '../button/index.js';
 import InputField from '../inputField/index.js';
 import { PostsContext, UserContext } from '@/context/context.js';
+import shortUUID from 'short-uuid';
 
 import styles from './CreatePostForm.styles.js';
 
@@ -24,7 +25,7 @@ const CreatePostForm = ({ closeOnSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let newPost = { ...formData };
+    let newPost = { ...formData, id: shortUUID.generate() };
     setPosts(posts.concat(newPost));
     closeOnSubmit();
   };
