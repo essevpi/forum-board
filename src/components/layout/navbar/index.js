@@ -17,10 +17,10 @@ const Navbar = () => {
   };
 
   return (
-    <div className='h-[--nav-height] flex items-center justify-center bg-neutral-800'>
+    <div className='h-[--nav-height] flex items-center justify-center bg-neutral-800 sm:px-4'>
       <div className='container lg:w-3/4 2xl:w-1/2 px-4 h-full flex items-center justify-between sm:p-0'>
         <div>
-          <span className='text-2xl uppercase'>Blackboard</span>
+          <span className='text-2xl uppercase'>Board</span>
         </div>
         <div>{userData.isLogged && <UserInfo user={userData} handleLogOut={handleLogOut} />}</div>
       </div>

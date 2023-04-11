@@ -13,7 +13,7 @@ const PostList = ({ posts }) => {
 const Post = ({ post }) => {
   return (
     <Link
-      href={`/board/post/${post.id}`}
+      href={`/board/${post.id}`}
       query={{ data: post }}
       className='flex flex-col w-full p-4 rounded-md bg-neutral-600 border border-transparent transition duration-300 hover:bg-neutral-700 hover:border-lime-300'
     >

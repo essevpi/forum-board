@@ -4,9 +4,24 @@ import { initialPosts, initialUser } from './dummyData';
 export const UserContext = createContext(null);
 export const PostsContext = createContext(null);
 
+const defaultPosts = [
+  {
+    title: '',
+    body: '',
+    id: '',
+    comments: []
+  },
+]
+
+/*
+  {
+
+  }
+*/
+
 const Providers = ({ children }) => {
   const [userData, setUserData] = useState(initialUser);
-  const [posts, setPosts] = useState();
+  const [posts, setPosts] = useState(defaultPosts);
 
   return (
     <PostsContext.Provider value={{ posts, setPosts }}>

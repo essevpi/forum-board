@@ -36,6 +36,8 @@ const styles = {
       duration-300
       hover:bg-neutral-800
       hover:text-neutral-300
+      sm:bg-neutral-700
+      sm:hover:bg-neutral-900
     `
   }
 };

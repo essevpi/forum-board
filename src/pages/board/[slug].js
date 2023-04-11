@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 import { PostsContext, UserContext } from '@/context/context';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import InputField from '@/components/inputField';
 import Button from '@/components/button';
 import CommentList from '@/components/commentList';
+import { IoArrowBackSharp } from 'react-icons/io5';
 
 const Post = () => {
   const { posts, setPosts } = useContext(PostsContext);
@@ -13,12 +15,10 @@ const Post = () => {
   const [post, setPost] = useState();
 
   useEffect(() => {
-    /* const posts = JSON.parse(localStorage.getItem('posts')); */
     const currPost = JSON.parse(localStorage.getItem('posts')).find(
       (post) => post.id == slug
     );
     setPost(currPost);
-    console.log('post is', post);
   }, [slug]);
 
   const [comment, setComment] = useState('');
@@ -32,7 +32,6 @@ const Post = () => {
 
     let posts = JSON.parse(localStorage.getItem('posts'));
     let postIndex = posts.findIndex((post) => post.id == slug);
-
     let newComment = {
       author: userData.username,
       body: comment,
@@ -46,13 +45,29 @@ const Post = () => {
     setComment('');
   };
 
+  if (slug !== post?.id) {
+    return (
+      <div className='flex p-8 sm:bg-neutral-800 sm:border sm:border-neutral-700 sm:rounded-md'>
+        <h4>Post not found!</h4>
+      </div>
+    );
+  }
+
   return (
     <div className='container flex flex-col gap-4 p-4 bg-neutral-900 sm:bg-neutral-800 sm:self-stretch sm:border sm:border-neutral-700 sm:rounded-md'>
       {/* POST */}
-      <div className='flex'>
+      <div className='flex justify-between items-center'>
         <div>
           <h4>{post?.title}</h4>
           <span className='text-neutral-400'>Posted by {post?.author}</span>
+        </div>
+        <div className=''>
+          <Link href='/board'>
+            <Button
+              content={<IoArrowBackSharp size='1.5rem' />}
+              variant='secondary'
+            />
+          </Link>
         </div>
       </div>
       <article className='h-full border-y border-neutral-700 py-4 px-2'>

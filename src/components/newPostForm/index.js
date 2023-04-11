@@ -12,7 +12,7 @@ const NewPostForm = ({ closeOnSubmit }) => {
 
   const [formData, setFormData] = useState({
     title: '',
-    content: '',
+    body: '',
     author: userData.username,
   });
 
