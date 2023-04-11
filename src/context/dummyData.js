@@ -1,9 +1,9 @@
-import shortUUID from "short-uuid";
+import shortUUID from 'short-uuid';
 
 export const initialUser = {
   username: 'Noice',
   password: 'safepw',
-  isLogged: true
+  isLogged: true,
 };
 
 export const initialPosts = [
@@ -16,11 +16,11 @@ export const initialPosts = [
     comments: [
       {
         author: 'User2378426',
-        body: 'This is a comment'
+        body: 'This is a comment',
       },
       {
         author: 'User1265463',
-        body: 'This is another comment'
+        body: 'This is another comment',
       },
     ],
   },

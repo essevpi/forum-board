@@ -1,14 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { PostsContext, UserContext } from '@/context/context';
-import Image from 'next/image';
-import Link from 'next/link';
 import PostList from '@/components/postList';
 import Button from '@/components/button';
 import Modal from '@/components/modal';
-import { initialPosts } from '@/context/dummyData';
 
-const Dashboard = () => {
+import styles from './Board.styles';
+
+const Board = () => {
   const { userData, setUserData } = useContext(UserContext);
   const { posts, setPosts } = useContext(PostsContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,12 +28,10 @@ const Dashboard = () => {
   };
 
   return (
-    <div className='container flex flex-col self-stretch gap-4 p-4 bg-neutral-900 sm:bg-neutral-800 sm:border sm:border-neutral-700 sm:rounded-md'>
-      <div className='flex w-full justify-between items-end border-b border-neutral-700 pb-4'>
-        <span className='flex-1 text-lg md:text-2xl font-bold leading-none'>
-          Posts
-        </span>
-        <div className='sm:w-1/5'>
+    <div className={styles.container}>
+      <div className={styles.headingContainer}>
+        <span className={styles.heading}>Posts</span>
+        <div className={styles.buttonContainer}>
           <Button
             content='New Post'
             type='button'
@@ -54,4 +51,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Board;

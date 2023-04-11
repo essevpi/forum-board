@@ -1,4 +1,4 @@
-import styles from './InputField.styles.js';
+import styles from './InputField.styles';
 
 const InputField = ({
   value,
@@ -7,14 +7,14 @@ const InputField = ({
   onInputChange,
   required,
   textArea,
-  textAreaStyle
+  textAreaStyle,
 }) => {
+  /* Used to generate the returned tag based on prop */
   let CustomTag = textArea ? 'textarea' : 'input';
 
   return (
-    <div className='flex flex-col'>
-      <label className='text-md font-medium ml-1' htmlFor={name}>
-        {/* {name.charAt(0).toUpperCase() + name.slice(1)} */}
+    <div className={styles.container}>
+      <label className={styles.label} htmlFor={name}>
         {name.toUpperCase()}
       </label>
       <CustomTag

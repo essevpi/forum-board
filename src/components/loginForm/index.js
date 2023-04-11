@@ -1,13 +1,12 @@
 import Button from '../button';
 
+import styles from './LoginForm.styles';
+
 const LoginForm = ({ children, onSubmit, handleReset }) => {
   return (
-    <form
-      onSubmit={onSubmit}
-      className='w-full flex justify-center border-y border-neutral-700 flex-col gap-4 p-4 bg-neutral-800 sm:border sm:border-neutral-700 sm:rounded-md sm:bg-neutral-800'
-    >
+    <form onSubmit={onSubmit} className={styles.formContainer}>
       {children}
-      <div className='flex gap-2 items-center sm:w-1/5 sm:ml-auto'>
+      <div className={styles.buttonContainer}>
         <Button content='Login' variant='primary' />
       </div>
     </form>

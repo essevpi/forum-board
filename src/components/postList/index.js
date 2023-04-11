@@ -1,8 +1,10 @@
 import Link from 'next/link';
 
+import styles from './PostList.styles';
+
 const PostList = ({ posts }) => {
   return (
-    <div className='w-full flex min-h-0 flex-col items-center gap-2'>
+    <div className={styles.postList.container}>
       {posts?.map((post, i) => (
         <Post key={i} post={post} />
       ))}
@@ -15,11 +17,11 @@ const Post = ({ post }) => {
     <Link
       href={`/board/${post.id}`}
       query={{ data: post }}
-      className='flex flex-col w-full p-4 rounded-md bg-neutral-600 border border-transparent transition duration-300 hover:bg-neutral-700 hover:border-lime-300'
+      className={styles.post.container}
     >
       <h5 className='leading-none'>{post.title}</h5>
-      <span className='text-s text-neutral-300 font-light'>{post.author}</span>
-      <p className='truncate ...'>{post.content}</p>
+      <span className={styles.post.author}>{post.author}</span>
+      <p className={styles.post.body}>{post.body}</p>
     </Link>
   );
 };

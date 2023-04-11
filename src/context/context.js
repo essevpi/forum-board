@@ -4,20 +4,15 @@ import { initialPosts, initialUser } from './dummyData';
 export const UserContext = createContext(null);
 export const PostsContext = createContext(null);
 
+/* Posts interface */
 const defaultPosts = [
   {
     title: '',
     body: '',
     id: '',
-    comments: []
+    comments: [],
   },
-]
-
-/*
-  {
-
-  }
-*/
+];
 
 const Providers = ({ children }) => {
   const [userData, setUserData] = useState(initialUser);

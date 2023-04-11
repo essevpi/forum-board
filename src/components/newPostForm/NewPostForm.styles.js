@@ -1,4 +1,9 @@
 const styles = {
+  formContainer: `
+    flex
+    flex-col
+    gap-2
+  `,
   input: `
     w-full
     text-white
@@ -11,7 +16,7 @@ const styles = {
     border-transparent
     focus:border-lime-300
     transition duration-300
-  `
+  `,
 };
 
 export default styles;

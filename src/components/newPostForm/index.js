@@ -4,7 +4,7 @@ import InputField from '../inputField/index.js';
 import { PostsContext, UserContext } from '@/context/context.js';
 import shortUUID from 'short-uuid';
 
-import styles from './NewPostForm.styles.js';
+import styles from './NewPostForm.styles';
 
 const NewPostForm = ({ closeOnSubmit }) => {
   const { posts, setPosts } = useContext(PostsContext);
@@ -35,7 +35,7 @@ const NewPostForm = ({ closeOnSubmit }) => {
   };
 
   return (
-    <form className='flex flex-col gap-2' onSubmit={handleSubmit}>
+    <form className={styles.formContainer} onSubmit={handleSubmit}>
       <div>
         <InputField
           value={formData.title}
@@ -47,7 +47,7 @@ const NewPostForm = ({ closeOnSubmit }) => {
       <div>
         <InputField
           value={formData.content}
-          name='content'
+          name='body'
           onInputChange={handleInputChange}
           required
           textArea

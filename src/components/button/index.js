@@ -1,4 +1,4 @@
-import styles from './Button.styles.js';
+import styles from './Button.styles';
 
 const Button = ({ content, type, variant, canClick, onClick }) => {
   return (

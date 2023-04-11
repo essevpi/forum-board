@@ -38,8 +38,8 @@ const styles = {
       hover:text-neutral-300
       sm:bg-neutral-700
       sm:hover:bg-neutral-900
-    `
-  }
+    `,
+  },
 };
 
 export default styles;

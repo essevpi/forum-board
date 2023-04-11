@@ -1,17 +1,15 @@
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
+import { UserContext } from '@/context/context';
 import { useRouter } from 'next/router';
-import { Montserrat } from 'next/font/google';
 import LoginForm from '@/components/loginForm';
 import InputField from '@/components/inputField';
-import { PostsContext, UserContext } from '@/context/context';
-import { initialPosts } from '@/context/dummyData';
 
-export default function Home() {
+import styles from './Home.styles';
+
+const Home = () => {
   const { userData, setUserData } = useContext(UserContext);
-  const { posts, setPosts } = useContext(PostsContext);
   const router = useRouter();
 
-  
   const onInputChange = (e) => {
     setUserData({
       ...userData,
@@ -29,7 +27,7 @@ export default function Home() {
   };
 
   return (
-    <div className='container flex flex-col items-center'>
+    <div className={styles.container}>
       <LoginForm onSubmit={handleSubmit}>
         <InputField
           value={userData.username}
@@ -44,4 +42,6 @@ export default function Home() {
       </LoginForm>
     </div>
   );
-}
+};
+
+export default Home;
