@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 import { UserContext } from '@/context/context';
 import { useRouter } from 'next/router';
+import { useTheme } from 'next-themes';
 import LoginForm from '@/components/loginForm';
 import InputField from '@/components/inputField';
 
-import styles from './Home.styles';
-import { useTheme } from 'next-themes';
+import styles from '../styles/Home.styles';
 
 const Home = () => {
   const { userData, setUserData } = useContext(UserContext);
