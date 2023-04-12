@@ -7,7 +7,7 @@ import Button from '@/components/button';
 import CommentList from '@/components/commentList';
 import { IoArrowBackSharp } from 'react-icons/io5';
 
-import styles from './styles/Post.styles';
+import styles from '../../styles/board/Post.styles';
 
 const Post = () => {
   const { posts, setPosts } = useContext(PostsContext);

@@ -5,7 +5,7 @@ import PostList from '@/components/postList';
 import Button from '@/components/button';
 import Modal from '@/components/modal';
 
-import styles from './styles/Board.styles';
+import styles from '../../styles/board/Board.styles';
 
 const Board = () => {
   const { userData, setUserData } = useContext(UserContext);
