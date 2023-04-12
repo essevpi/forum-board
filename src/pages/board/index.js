@@ -15,6 +15,7 @@ const Board = () => {
 
   useEffect(() => {
     setPosts(JSON.parse(localStorage.getItem('posts')));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /* redirect to home if not logged - dev only */
