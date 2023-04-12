@@ -6,13 +6,13 @@ const styles = {
     gap-4
     w-full
     border-y
-    border-neutral-700    
+    border-[--light-border-color]
     p-4
-    bg-neutral-800
+    bg-[--lightbackground-color-secondary]
     sm:border
-    sm:border-neutral-700
     sm:rounded-md
-    sm:bg-neutral-800
+    dark:border-[--dark-border-color]
+    dark:bg-[--dark-background-color-secondary]
   `,
   buttonContainer: `
     flex

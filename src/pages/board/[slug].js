@@ -50,6 +50,9 @@ const Post = () => {
     return (
       <div className={styles.postNotFound.container}>
         <h4>Post not found!</h4>
+        <Link href='/board'>
+          <Button content='Back to board' variant='primary' />
+        </Link>
       </div>
     );
   }
@@ -71,7 +74,7 @@ const Post = () => {
           </Link>
         </div>
       </div>
-      <article className={styles.post.bodyContainer}>{post?.content}</article>
+      <article className={styles.post.bodyContainer}>{post?.body}</article>
       {/* COMMENTS */}
       <CommentList post={post} />
       <form

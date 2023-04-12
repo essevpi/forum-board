@@ -6,25 +6,27 @@ const styles = {
     self-stretch
     gap-4
     p-4
-    bg-neutral-900    
+    sm:bg-[--light-background-color-secondary]
     sm:border
-    sm:border-neutral-700
+    sm:border-[--light-border-color]
     sm:rounded-md
-    sm:bg-neutral-800
+    dark:sm:bg-[--dark-background-color-secondary]
+    dark:sm:border-[--dark-border-color]    
   `,
   headingContainer: `
     flex    
-    justify-between
     items-end
+    justify-between
     w-full
     border-b
-    border-neutral-700
+    border-[--light-border-color]
+    dark:border-[--dark-border-color]
     pb-4
   `,
   heading: `    
-    text-lg
-    md:text-2xl
-    font-bold
+    text-md
+    md:text-xl
+    font-medium
     leading-none
   `,
   buttonContainer: `

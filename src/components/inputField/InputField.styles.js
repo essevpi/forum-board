@@ -9,17 +9,21 @@ const styles = {
     font-medium    
   `,
   input: `
-    w-full
-    text-white
-    p-2
-    rounded-md
-    outline-none
-    bg-neutral-900
-    border
+    w-full       
+    outline-none    
+    border-2
     border-transparent
-    focus:bg-[--background-color]
-    focus:border-lime-300
-    transition duration-300
+    rounded-md
+    p-2
+    text-[--light-text-color-secondary]
+    bg-[--light-input-background]
+    focus:bg-[--light-input-focus-background]
+    focus:border-[--light-accent]
+    dark:text-[--dark-text-color]
+    dark:bg-[--dark-input-background]
+    dark:focus:bg-[--dark-input-focus-background]
+    dark:focus:border-[--dark-accent]
+    transition-colors
   `,
 };
 

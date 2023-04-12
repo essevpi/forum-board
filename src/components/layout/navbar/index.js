@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { useRouter } from 'next/router';
 import { UserContext } from '@/context/context';
 import Image from 'next/image';
+import Toggle from '@/components/toggle';
 
 import styles from './Navbar.styles';
 
@@ -23,11 +24,16 @@ const Navbar = () => {
       <div className={styles.navbarWrapper}>
         <div>
           <span className='text-2xl uppercase'>Board</span>
-        </div>
-        <div>
-          {userData.isLogged && (
-            <UserInfo user={userData} handleLogOut={handleLogOut} />
-          )}
+        </div>        
+        <div className={styles.navbarControlsContainer}>
+        <div className={styles.themeToggleContainer}>
+            <Toggle />
+          </div>
+          <div className={styles.userDataContainer}>
+            {userData.isLogged && (
+              <UserInfo user={userData} handleLogOut={handleLogOut} />
+            )}
+          </div>          
         </div>
       </div>
     </div>
@@ -49,14 +55,14 @@ const UserInfo = ({ user, handleLogOut }) => {
         <span className='text-lg md:text-xl leading-none'>{user.username}</span>
         <div className='text-end'>
           <span
-            className='text-xs text-neutral-400 cursor-pointer hover:text-neutral-300'
+            className='text-xs font-medium text-[--light-text-color-tertiary] cursor-pointer hover:text-[--light-text-hover-color] dark:text-[--dark-text-color-secondary] dark:hover:text-[--dark-text-hover-color]'
             onClick={handleLogOut}
           >
             Log Out
           </span>
         </div>
       </div>
-      <div className='relative ring-2 ring-lime-300 rounded-full'>
+      <div className='relative ring-2 ring-[--light-accent] dark:ring-[--dark-accent] rounded-full'>
         <Image
           src={avatarSrc}
           loader={avatarLoader}

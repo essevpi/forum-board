@@ -5,7 +5,8 @@ const styles = {
     items-center
     justify-center
     sm:px-4
-    bg-neutral-800    
+    bg-[--light-navbar-color]
+    dark:bg-[--dark-navbar-color]
   `,
   navbarWrapper: `
     container
@@ -18,6 +19,19 @@ const styles = {
     px-4    
     sm:p-0
   `,
+  navbarControlsContainer: `
+    flex
+    divide-x
+    divide-[--dark-border-color]
+    items-center
+  `,
+  userDataContainer: `
+    pl-4
+  `,
+  themeToggleContainer: `
+    flex
+    pr-4
+  `
 };
 
 export default styles;

@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react';
+import { ThemeProvider } from 'next-themes';
 import { initialPosts, initialUser } from './dummyData';
 
 export const UserContext = createContext(null);
@@ -19,11 +20,13 @@ const Providers = ({ children }) => {
   const [posts, setPosts] = useState(defaultPosts);
 
   return (
-    <PostsContext.Provider value={{ posts, setPosts }}>
-      <UserContext.Provider value={{ userData, setUserData }}>
-        {children}
-      </UserContext.Provider>
-    </PostsContext.Provider>
+    <ThemeProvider attribute='class' enableSystem={false}>
+      <PostsContext.Provider value={{ posts, setPosts }}>
+        <UserContext.Provider value={{ userData, setUserData }}>
+          {children}
+        </UserContext.Provider>
+      </PostsContext.Provider>
+    </ThemeProvider>
   );
 };
 

@@ -8,7 +8,8 @@ const styles = {
   flex
   justify-center
   items-center
-  bg-[--modal-background-color]
+  bg-[--light-modal-background-color]
+  dark:bg-[--dark-modal-background-color]
   backdrop-blur-sm
   `,
   modalWindow: `
@@ -16,18 +17,23 @@ const styles = {
   flex
   flex-col
   gap-2
+  rounded-md
+  border
+  border-[--light-border-color]  
   mx-4
   sm:mx-0
   p-4
-  rounded-md   
-  bg-neutral-800   
+  bg-[--light-background-color-secondary] 
+  dark:border-[--dark-border-color] 
+  dark:bg-[--dark-background-color-secondary]
   `,
   modalHeadingContainer: `
     flex
     justify-between
     items-end
     border-b
-    border-neutral-700
+    border-[--light-border-color]
+    dark:border-[--dark-border-color]
     pb-2
   `,
 };

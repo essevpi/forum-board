@@ -2,7 +2,8 @@ const styles = {
   commentList: {
     container: `
       border-b
-      border-neutral-700
+      border-[--light-border-color]
+      dark:border-[--dark-border-color]
       pb-4
     `,
     comments: `
@@ -14,9 +15,12 @@ const styles = {
       max-h-60
       pr-2
       scrollbar-thin
-      scrollbar-track-neutral-800
-      scrollbar-thumb-lime-300
-      sm:scrollbar-track-neutral-900
+      scrollbar-track-neutral-200
+      scrollbar-thumb-violet-700
+      sm:scrollbar-track-neutral-300
+      dark:scrollbar-track-neutral-900
+      dark:scrollbar-thumb-lime-300
+      dark:sm:scrollbar-track-neutral-800
     `,
     noComments: `
       ml-2
@@ -27,10 +31,14 @@ const styles = {
     container: `
       flex
       flex-col
-      p-2
       rounded-md
-      bg-neutral-800
-      sm:bg-neutral-700      
+      p-2
+      bg-[--light-background-color-secondary]
+      sm:bg-[--light-background-color-tertiary]
+      shadow-inner
+      dark:bg-[--dark-background-color-secondary]
+      dark:sm:bg-[--dark-background-color-tertiary]
+      dark:shadow-none         
     `,
     author: `
       font-bold

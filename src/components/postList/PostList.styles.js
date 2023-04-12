@@ -16,18 +16,16 @@ const styles = {
       w-full
       p-4
       rounded-md
-      bg-neutral-600
-      border
-      border-transparent
-      transition
-      duration-300
-      hover:bg-neutral-700
-      hover:border-lime-300
+      bg-[--light-background-color-tertiary]
+      hover:bg-[--light-background-hover-color]
+      dark:bg-[--dark-background-color-tertiary]
+      dark:hover:bg-[--dark-background-hover-color]
+      transition-all
     `,
     author: `
-      text-s
-      text-neutral-300
-      font-light
+      text-sm
+      text-[--light-text-color-secondary]
+      dark:text-[--dark-text-color-secondary]
     `,
     body: `
       truncate

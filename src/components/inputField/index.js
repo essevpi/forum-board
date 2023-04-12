@@ -23,7 +23,7 @@ const InputField = ({
         value={value}
         name={name}
         onChange={onInputChange}
-        className={`${styles.input} ${textArea ? 'max-h-64' : ''} ${
+        className={`${styles.input} ${textArea ? 'min-h-[100px] max-h-64' : ''} ${
           textAreaStyle ? textAreaStyle : ''
         }`}
       />

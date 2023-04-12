@@ -5,13 +5,14 @@ const styles = {
       flex
       flex-col
       gap-4
-      p-4
-      bg-neutral-900
+      p-4      
       sm:self-stretch
       sm:border
-      sm:border-neutral-700
       sm:rounded-md
-      sm:bg-neutral-800
+      sm:border-[--light-border-color]
+      dark:sm:border-[--dark-border-color]
+      sm:bg-[--light-background-color-secondary]
+      dark:sm:bg-[--dark-background-color-secondary]
     `,
     headingContainer: `
       flex
@@ -19,12 +20,14 @@ const styles = {
       items-center
     `,
     author: `
-      text-neutral-400
+      text-[--light-text-color-secondary]
+      dark:text-[--dark-text-color-secondary]
     `,
     bodyContainer: `
       h-full
       border-y
-      border-neutral-700
+      border-[--light-border-color]
+      dark:border-[--dark-border-color]
       py-4
       px-2
     `,
@@ -35,10 +38,7 @@ const styles = {
     `,
     commentTextArea: `
       resize-none
-      h-32
-      bg-neutral-950
-      focus:bg-neutral-950
-      sm:bg-neutral-900
+      h-32      
     `,
     formButtonContainer: `
       w-full
@@ -49,11 +49,15 @@ const styles = {
   postNotFound: {
     container: `
       flex
-      p-8      
+      flex-col
+      gap-4
+      p-8
       sm:border
-      sm:border-neutral-700
       sm:rounded-md
-      sm:bg-neutral-800
+      sm:border-[--light-border-color]
+      sm:bg-[--light-background-color-secondary]
+      dark:sm:border-[--dark-border-color]
+      dark:sm:bg-[--dark-background-color-secondary]
     `,
   },
 };

@@ -2,15 +2,17 @@ const styles = {
   button: {
     primary: `
       w-full
-      p-1
-      text-black
+      rounded-md  
+      p-1      
       font-bold
-      uppercase
-      rounded-md          
-      bg-lime-300      
-      transition
-      duration-300
-      hover:bg-lime-600
+      uppercase              
+      bg-[--light-accent]
+      text-[--light-text-color]
+      hover:bg-[--light-accent-hover]
+      dark:bg-[--dark-accent]
+      dark:text-[--light-text-color]
+      dark:hover:bg-[--dark-accent-hover]
+      transition-all
     `,
     'primary-rounded': `
       w-full
@@ -18,26 +20,26 @@ const styles = {
       text-black
       font-bold
       uppercase
-      rounded-full          
-      bg-lime-300      
-      transition
-      duration-300
-      hover:bg-lime-600
+      rounded-full
+      bg-[--light-accent]
+      text-[--light-text-color]
+      hover:bg-[--light-accent-hover]
+      dark:bg-[--dark-accent]
+      dark:text-[--light-text-color]
+      dark:hover:bg-[--dark-accent-hover]      
+      transition-all
     `,
     secondary: `
       w-full
       p-1
-      text-white
       font-bold
       uppercase     
       rounded-md       
-      bg-neutral-700
-      transition
-      duration-300
-      hover:bg-neutral-800
-      hover:text-neutral-300
-      sm:bg-neutral-700
-      sm:hover:bg-neutral-900
+      bg-[--light-secondary-button-color]
+      hover:bg-[--light-secondary-button-hover-color]
+      dark:bg-[--dark-secondary-button-color]
+      dark:hover:bg-[--dark-secondary-button-hover-color]
+      transition-all
     `,
   },
 };
