@@ -9,7 +9,6 @@ import styles from '../styles/Home.styles';
 
 const Home = () => {
   const { userData, setUserData } = useContext(UserContext);
-  const { theme } = useTheme();
   const router = useRouter();
 
   const onInputChange = (e) => {

@@ -20,7 +20,7 @@ const Providers = ({ children }) => {
   const [posts, setPosts] = useState(defaultPosts);
 
   return (
-    <ThemeProvider attribute='class' enableSystem={false}>
+    <ThemeProvider attribute='class' defaultTheme='dark' enableSystem={false}>
       <PostsContext.Provider value={{ posts, setPosts }}>
         <UserContext.Provider value={{ userData, setUserData }}>
           {children}
