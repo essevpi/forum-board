@@ -14,7 +14,7 @@ const styles = {
     bg-[--light-secondary-button-color]
     peer-focus:outline-none
     rounded-full
-    peer    
+    peer
     peer-checked:after:translate-x-full
     peer-checked:after:border-red-500
     after:content-['']

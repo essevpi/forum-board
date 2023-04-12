@@ -23,6 +23,7 @@ const Toggle = ({}) => {
         onClick={handleToggle}
         className={styles.input}
         checked={theme === 'dark' ? true : false}
+        readOnly
       />
       <IoSunny className={styles.sunIcon} />
       <IoMoon className={styles.moonIcon} />
