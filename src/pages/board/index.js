@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { PostsContext, UserContext } from '@/context/context';
+import { PostsContext, UserDataContext } from '@/context/context';
 import PostList from '@/components/postList';
 import Button from '@/components/button';
 import Modal from '@/components/modal';
@@ -8,7 +8,7 @@ import Modal from '@/components/modal';
 import styles from '../../styles/board/Board.styles';
 
 const Board = () => {
-  const { userData, setUserData } = useContext(UserContext);
+  const { userData, setUserData } = useContext(UserDataContext);
   const { posts, setPosts } = useContext(PostsContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();

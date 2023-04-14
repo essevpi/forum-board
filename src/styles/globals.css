@@ -8,13 +8,14 @@
   
   /* Light Theme variables */
   --light-text-color: theme(colors.neutral.950);
-  --light-text-hover-color: theme(colors.neutral.900/.5);
-  --light-text-color-secondary: theme(colors.neutral.800);
+  --light-text-hover-color: theme(colors.neutral.900/.7);
+  --light-text-color-secondary: theme(colors.neutral.500);
   --light-text-color-tertiary: theme(colors.neutral.600);
   --light-background-color: #fff;
   --light-background-color-secondary: theme(colors.neutral.100);
   --light-background-color-tertiary: theme(colors.neutral.200);
   --light-background-hover-color: theme(colors.neutral.300);
+  --light-background-color-selected: theme(colors.neutral.400);
   --light-navbar-color: theme(colors.neutral.100);
   --light-border-color: theme(colors.neutral.300);
   --light-input-background: theme(colors.neutral.200);
@@ -30,13 +31,14 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --dark-text-color: theme(colors.neutral.50);    
-    --dark-text-color-secondary: theme(colors.neutral.400);
+    --dark-text-color-secondary: theme(colors.neutral.500);
     --dark-text-hover-color: theme(colors.neutral.200/.5);
     --dark-background-color: theme(colors.neutral.950);
     --dark-background-color-secondary: theme(colors.neutral.900);
     --dark-background-color-tertiary: theme(colors.neutral.800);
     --dark-background-hover-color: theme(colors.neutral.800/.7);
-    --dark-navbar-color: theme(colors.neutral.900);  
+    --dark-background-color-selected: theme(colors.neutral.600);
+    --dark-navbar-color: theme(colors.neutral.900);
     --dark-modal-background-color: rgba(60, 60, 60, 0.3);
     --dark-accent: theme(colors.lime.300);
     --dark-accent-hover: theme(colors.lime.500);
@@ -51,6 +53,7 @@
 html {
   color: var(--light-text-color);
   background: var(--light-background-color);
+  overflow-x: hidden;
 }
 
 html.dark {

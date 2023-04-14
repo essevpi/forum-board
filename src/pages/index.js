@@ -1,49 +1,45 @@
-import { useContext } from 'react';
-import { UserContext } from '@/context/context';
+import { useContext, useEffect, useState } from 'react';
+import { UserDataContext, UsersContext } from '@/context/context';
 import { useRouter } from 'next/router';
-import { useTheme } from 'next-themes';
+import { motion } from 'framer-motion';
 import LoginForm from '@/components/loginForm';
-import InputField from '@/components/inputField';
+import Tabs from '@/components/tabWindow/tabs';
 
 import styles from '../styles/Home.styles';
+import TabWindow from '@/components/tabWindow';
+import SignupForm from '@/components/signupForm';
 
 const Home = () => {
-  const { userData, setUserData } = useContext(UserContext);
+  const { userData, setUserData } = useContext(UserDataContext); 
   const router = useRouter();
 
-  const onInputChange = (e) => {
-    setUserData({
-      ...userData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  useEffect(() => {
+    if (userData.isLogged) router.push('/board');
+  }, []); 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  /*  const handleLogOut = () => {
     setUserData({
-      ...userData,
-      isLogged: true,
+      username: '',
+      password: '',
+      imgSrc: '',
+      isLogged: false,
     });
-    router.push('/board');
-  };
+  }; */
+
+  const items = [
+    {
+      label: 'Login',
+      item: <LoginForm />
+    },
+    {
+      label: 'Signup',
+      item: <SignupForm />
+    },
+  ]
 
   return (
     <div className={styles.container}>
-      <LoginForm onSubmit={handleSubmit}>
-        <InputField
-          value={userData.username}
-          name='username'
-          onInputChange={onInputChange}
-          required
-        />
-        <InputField
-          value={userData.password}
-          name='password'
-          type='password'
-          onInputChange={onInputChange}
-          required
-        />
-      </LoginForm>
+      <TabWindow items={items} />
     </div>
   );
 };

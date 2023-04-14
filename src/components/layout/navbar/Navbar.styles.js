@@ -18,6 +18,24 @@ const styles = {
     justify-between
     px-4    
     sm:p-0
+    `,
+  navbarLogo: `
+    flex
+    items-center
+    
+  `,
+  navbarLogoIcon: `
+    text-[--light-accent]
+    dark:text-[--dark-accent]
+    text-[2rem]
+  `,
+  navbarLogoText: `
+    text-2xl
+    font-bold
+    uppercase
+    leading-none
+    hover:text-[--light-text-hover-color]
+    dark:hover:text-[--dark-text-hover-color]
   `,
   navbarControlsContainer: `
     flex

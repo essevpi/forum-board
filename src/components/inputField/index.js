@@ -3,6 +3,7 @@ import styles from './InputField.styles';
 const InputField = ({
   value,
   name,
+  placeholder,
   type,
   onInputChange,
   required,
@@ -18,11 +19,12 @@ const InputField = ({
         {name.toUpperCase()}
       </label>
       <CustomTag
-        type={type ? `${type}` : 'text'}
-        required={required ? true : false}
         value={value}
         name={name}
+        placeholder={placeholder || null}
+        type={type ? `${type}` : 'text'}
         onChange={onInputChange}
+        required={required ? true : false}
         className={`${styles.input} ${textArea ? 'min-h-[100px] max-h-64' : ''} ${
           textAreaStyle ? textAreaStyle : ''
         }`}

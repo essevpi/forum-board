@@ -1,17 +1,19 @@
-import { useContext, useState } from 'react';
+import { useState, useContext } from 'react';
 import { UsersContext, UserDataContext } from '@/context/context';
+import { defaultUser } from '@/context/dummyData';
 import { useRouter } from 'next/router';
+import Error from '../error';
 import InputField from '../inputField';
 import Button from '../button';
-import Error from '../error';
 
-import styles from './LoginForm.styles';
+import styles from './SignupForm.styles';
 
-const LoginForm = () => {
+const SignupForm = () => {
   const { users, setUsers } = useContext(UsersContext);
   const { userData, setUserData } = useContext(UserDataContext);
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
+    email: '',
     username: '',
     password: '',
   });
@@ -27,35 +29,44 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    let user = users.find((u) => u.username === formData.username);
-
-    if (user) {
-      if (user.password === formData.password) {
-        setUserData({ ...user, isLogged: true });
-        
-        localStorage.setItem('userData', JSON.stringify(user));
-        setFormData({
-          username: '',
-          password: '',
-        });
-        setError(null);
-        router.push('/board');
-      } else {
-        setError('Incorrect password.')
-      }
+    if (users.some((u) => u.email === formData.email)) {
+      setError('This email is already associated to another account.');
+    } else if (users.some((u) => u.username === formData.username)) {
+      setError('User already exists.');
+    } else if (formData.password.length < 8) {
+      setError('Password must be at least 8 characters long.');
     } else {
-      setError('User not found.');
-    }
+      let newUser = {
+        ...defaultUser,
+        email: formData.email,
+        username: formData.username,
+        password: formData.password,
+        isLogged: true,
+      };
+      setFormData({
+        email: '',
+        username: '',
+        password: '',
+      });
+      setUsers(users.concat(newUser));
+      setUserData(newUser);
+      router.push('/board');
+    }    
   };
 
   return (
     <form onSubmit={handleSubmit} className={styles.formContainer}>
-      {/* <div className={styles.headingContainer}>
-        <h5>Login</h5>
-      </div> */}
       <div className={styles.errorContainer}>
         <Error message={error} onTimeout={() => setError(null)} />
       </div>
+      <InputField
+        value={formData.email}
+        name='email'
+        placeholder='example@mail.com'
+        type='email'
+        onInputChange={onInputChange}
+        required
+      />
       <InputField
         value={formData.username}
         name='username'
@@ -72,10 +83,10 @@ const LoginForm = () => {
         required
       />
       <div className={styles.buttonContainer}>
-        <Button content='Login' variant='primary' />
+        <Button content='Signup' variant='primary' />
       </div>
     </form>
   );
 };
 
-export default LoginForm;
+export default SignupForm;

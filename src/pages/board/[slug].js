@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { PostsContext, UserContext } from '@/context/context';
+import { PostsContext, UserDataContext } from '@/context/context';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import InputField from '@/components/inputField';
@@ -11,7 +11,7 @@ import styles from '../../styles/board/Post.styles';
 
 const Post = () => {
   const { posts, setPosts } = useContext(PostsContext);
-  const { userData } = useContext(UserContext);
+  const { userData } = useContext(UserDataContext);
   const router = useRouter();
   const slug = router.query.slug?.toString();
   const [post, setPost] = useState();
@@ -19,7 +19,7 @@ const Post = () => {
 
   useEffect(() => {
     const currPost = JSON.parse(localStorage.getItem('posts')).find(
-      (post) => post.id == slug
+      (post) => post.id === slug
     );
     setPost(currPost);
   }, [slug]);

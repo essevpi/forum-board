@@ -27,7 +27,7 @@ const styles = {
       h-full
       border-y
       border-[--light-border-color]
-      dark:sm:border-[--dark-border-color]
+      dark:border-[--dark-border-color]
       py-4
       px-2
     `,

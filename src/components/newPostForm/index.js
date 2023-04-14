@@ -1,14 +1,14 @@
 import { useState, useContext } from 'react';
-import Button from '../button/index.js';
-import InputField from '../inputField/index.js';
-import { PostsContext, UserContext } from '@/context/context.js';
+import { PostsContext, UserDataContext } from '@/context/context';
+import Button from '../button';
+import InputField from '../inputField';
 import shortUUID from 'short-uuid';
 
 import styles from './NewPostForm.styles';
 
 const NewPostForm = ({ closeOnSubmit }) => {
   const { posts, setPosts } = useContext(PostsContext);
-  const { userData } = useContext(UserContext);
+  const { userData } = useContext(UserDataContext);
 
   const [formData, setFormData] = useState({
     title: '',

@@ -1,10 +1,41 @@
 import shortUUID from 'short-uuid';
 
 export const initialUser = {
-  username: 'Noice',
-  password: 'safepw',
-  isLogged: true,
+  email: '',
+  username: '',
+  password: '',
+  picSrc: '',
+  isLogged: false,
+  isAdmin: false,
 };
+
+export const defaultUser = {
+  email: '',
+  username: '',
+  password: '',
+  picSrc: 'https://boring-avatars-api.vercel.app/api/avatar?variant=beam',
+  isLogged: false,
+  isAdmin: false,
+};
+
+export const initialUsers = [
+  {
+    email: 'admin@admin.com',
+    username: 'Admin',
+    password: 'admin',
+    picSrc: 'https://boring-avatars-api.vercel.app/api/avatar?variant=beam',
+    isLogged: false,
+    isAdmin: true,
+  },
+  {
+    email: 'user123@mail.com',
+    username: 'User123',
+    password: 'safepw',
+    picSrc: 'https://boring-avatars-api.vercel.app/api/avatar?variant=beam',
+    isLogged: false,
+    isAdmin: false,
+  },
+];
 
 export const initialPosts = [
   {
