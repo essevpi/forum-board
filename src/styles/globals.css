@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  color: var(--light-text-color);
+  background: var(--light-background-color);
+  overflow-x: hidden;
+}
+
+html.dark {
+  color: var(--dark-text-color);
+  background: var(--dark-background-color);
+}
+
 :root {
   /* Unit variables */
   --nav-height: 5rem;
@@ -48,17 +59,6 @@
     --dark-secondary-button-color: theme(colors.neutral.600);
     --dark-secondary-button-hover-color: theme(colors.neutral.700);
   }
-}
-
-html {
-  color: var(--light-text-color);
-  background: var(--light-background-color);
-  overflow-x: hidden;
-}
-
-html.dark {
-  color: var(--dark-text-color);
-  background: var(--dark-background-color);
 }
 
 @layer base {

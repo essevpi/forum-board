@@ -15,9 +15,9 @@ export default function App({ Component, pageProps, router }) {
     <Providers>
       <div className={`${font.variable} font-sans`}>
         <Layout>
-          {/* <AnimatePresence mode='exit'> */}
-            {/* <motion.div
-              id='test'
+          {/* <AnimatePresence mode='exit'>
+            <motion.div
+              className='w-full h-full'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -29,8 +29,8 @@ export default function App({ Component, pageProps, router }) {
               key={router.asPath}
             > */}
               <Component {...pageProps}  />
-            {/* </motion.div> */}
-          {/* </AnimatePresence> */}
+            {/* </motion.div>
+          </AnimatePresence> */}
         </Layout>
       </div>
     </Providers>

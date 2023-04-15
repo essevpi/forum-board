@@ -11,6 +11,7 @@ const styles = {
       flex-col
       gap-2
       overflow-y-scroll
+      scroll-smooth
       min-h-min
       max-h-60
       pr-2

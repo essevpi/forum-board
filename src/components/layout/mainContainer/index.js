@@ -11,19 +11,26 @@ const MainContainer = ({ children }) => {
       <motion.main
         key={router.asPath}
         className={styles.container}
-        initial={{ x: -200, opacity: 0 }}
+        initial={{ x: -20, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        exit={{ x: 200, opacity: 0 }}
+        exit={{ x: 20, opacity: 0 }}
         transition={{
-          type: 'spring',
-          stiffness: 260,
-          damping: 20,
+          duration: 0.2,
         }}
       >
         {children}
       </motion.main>
     </AnimatePresence>
   );
+  /* return (
+      <main
+        key={router.asPath}
+        className={styles.container}
+        
+      >
+        {children}
+      </main>
+  ); */
 };
 
 export default MainContainer;

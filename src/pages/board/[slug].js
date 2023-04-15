@@ -44,6 +44,11 @@ const Post = () => {
 
     localStorage.setItem('posts', JSON.stringify(updatedPosts));
     setComment('');
+    //scroll comments to bottom when a new one is added
+    setTimeout(() => {
+      let objDiv = document.getElementById('comments');
+      objDiv.scrollTop = objDiv.scrollHeight;
+    }, 0);
   };
 
   if (slug !== post?.id) {
