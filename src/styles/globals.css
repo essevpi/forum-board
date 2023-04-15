@@ -5,12 +5,15 @@
 html {
   color: var(--light-text-color);
   background: var(--light-background-color);
-  overflow-x: hidden;
 }
 
 html.dark {
   color: var(--dark-text-color);
   background: var(--dark-background-color);
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 :root {
