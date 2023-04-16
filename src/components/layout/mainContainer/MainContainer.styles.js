@@ -1,12 +1,11 @@
 const styles = {
   container: `
+    min-h-[calc(100vh-var(--nav-height))]    
+    w-full
     flex
     justify-center
-    w-full
-    lg:w-3/4
-    2xl:w-1/2
     lg:mx-auto
-    min-h-[calc(100vh-var(--nav-height))]    
+    lg:w-1/2
     sm:items-center
     sm:py-8
     sm:px-4

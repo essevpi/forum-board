@@ -4,15 +4,13 @@ const styles = {
     flex
     items-center
     justify-center
-    sm:px-4
     bg-[--light-navbar-color]
     dark:bg-[--dark-navbar-color]
   `,
   navbarWrapper: `
     container
-    lg:w-3/4
-    2xl:w-1/2
-    h-full
+    lg:mx-auto
+    lg:w-1/2
     flex
     items-center
     justify-between
@@ -21,8 +19,7 @@ const styles = {
     `,
   navbarLogo: `
     flex
-    items-center
-    
+    items-center    
   `,
   navbarLogoIcon: `
     text-[--light-accent]
@@ -40,11 +37,12 @@ const styles = {
   navbarControlsContainer: `
     flex
     divide-x
-    divide-[--dark-border-color]
+    divide-[--light-border-color]
+    dark:divide-[--dark-border-color]
     items-center
   `,
-  userDataContainer: `
-    pl-4
+  userMenuContainer: `
+    xs:pl-4
   `,
   themeToggleContainer: `
     flex

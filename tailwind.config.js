@@ -1,4 +1,5 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
+const { screens } = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -9,6 +10,10 @@ module.exports = {
     './src/styles/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    screens: {
+      'xs': '480px',
+      ...screens
+    },
     extend: {
       fontFamily: {
         sans: ['var(--font-montserrat)', ...fontFamily.sans],

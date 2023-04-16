@@ -1,11 +1,11 @@
 import shortUUID from 'short-uuid';
 
 export const initialUser = {
-  email: '',
-  username: '',
-  password: '',
-  picSrc: '',
-  isLogged: false,
+  email: 'test@test.com',
+  username: 'TestUser',
+  password: 'testpw',
+  picSrc: 'https://boring-avatars-api.vercel.app/api/avatar?variant=beam',
+  isLogged: true,
   isAdmin: false,
 };
 
