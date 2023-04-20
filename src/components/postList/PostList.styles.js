@@ -12,7 +12,6 @@ const styles = {
   post: {
     container: `
       flex
-      flex-col
       w-full
       p-4
       rounded-md
@@ -22,6 +21,12 @@ const styles = {
       dark:hover:bg-[--dark-background-hover-color]
       transition-all
     `,
+    wrapper: `
+      flex
+      flex-col
+      flex-1
+      min-w-0
+    `,
     author: `
       text-sm
       text-[--light-text-color-secondary]
@@ -30,6 +35,26 @@ const styles = {
     body: `
       truncate
       ...
+    `,
+    deleteIconContainer: `
+      flex
+      items-center
+      ml-2
+    `,
+    deleteIconWrapper: `
+      rounded-md
+      p-1
+      bg-[--light-background-color-secondary]
+      hover:bg-[--light-background-color]
+      hover:text-[--light-accent]
+      dark:bg-[--dark-background-color-secondary]
+      dark:hover:bg-[--dark-background-color]
+      dark:hover:text-[--dark-accent]
+      transition-all
+      cursor-pointer
+    `,
+    deleteIcon: `
+      text-[1.25rem]
     `,
   },
 };

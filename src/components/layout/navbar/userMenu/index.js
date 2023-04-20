@@ -1,9 +1,10 @@
 import { useContext, useState } from 'react';
 import { UserDataContext } from '@/context/context';
+import { defaultUser } from '@/context/dummyData';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { IoPerson, IoClose } from 'react-icons/io5';
+import Image from 'next/image';
 
 import styles from './UserMenu.styles';
 
@@ -13,11 +14,8 @@ const UserMenu = ({}) => {
   const router = useRouter();
 
   const handleLogout = () => {
-    setUserData({
-      username: '',
-      password: '',
-      isLogged: false,
-    });
+    setUserData(defaultUser);
+    localStorage.removeItem('userData');
     router.push('/');
   };
 
@@ -33,7 +31,7 @@ const UserMenu = ({}) => {
         {isVisible && (
           <motion.div
             initial={{ width: 0, opacity: 0 }}
-            animate={{ width: '60%', opacity: 1 }}
+            animate={{ width: '75%', opacity: 1 }}
             exit={{ width: 0, opacity: 0 }}
             className={styles.mobileDrawer}
           >
@@ -41,13 +39,13 @@ const UserMenu = ({}) => {
               className={styles.closeDrawerIcon}
               onClick={() => setIsVisible((prev) => !prev)}
             />
-            <UserInfo user={userData} />
+            <UserInfo user={userData} handleLogout={handleLogout} />
           </motion.div>
         )}
       </AnimatePresence>
 
       <div className={styles.container}>
-        <UserInfo user={userData} />
+        <UserInfo user={userData} handleLogout={handleLogout} />
       </div>
     </>
   );

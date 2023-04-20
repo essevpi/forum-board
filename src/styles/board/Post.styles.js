@@ -6,18 +6,29 @@ const styles = {
       flex-col
       gap-4
       p-4      
-      sm:self-stretch
-      sm:border
-      sm:rounded-md
-      sm:border-[--light-border-color]
-      dark:sm:border-[--dark-border-color]
-      sm:bg-[--light-background-color-secondary]
-      dark:sm:bg-[--dark-background-color-secondary]
+      xs:self-stretch
+      xs:border
+      xs:rounded-md
+      xs:border-[--light-border-color]
+      dark:xs:border-[--dark-border-color]
+      xs:bg-[--light-background-color-secondary]
+      dark:xs:bg-[--dark-background-color-secondary]
     `,
     headingContainer: `
       flex
-      justify-between
+      flex-wrap
       items-center
+    `,
+    headingWrapper: `
+      flex-1
+      whitespace-nowrap
+    `,
+    actionsContainer: `
+      flex
+      gap-2
+    `,
+    buttonContainer: `
+      flex
     `,
     author: `
       text-[--light-text-color-secondary]
@@ -52,12 +63,12 @@ const styles = {
       flex-col
       gap-4
       p-8
-      sm:border
-      sm:rounded-md
-      sm:border-[--light-border-color]
-      sm:bg-[--light-background-color-secondary]
-      dark:sm:border-[--dark-border-color]
-      dark:sm:bg-[--dark-background-color-secondary]
+      xs:border
+      xs:rounded-md
+      xs:border-[--light-border-color]
+      xs:bg-[--light-background-color-secondary]
+      dark:xs:border-[--dark-border-color]
+      dark:xs:bg-[--dark-background-color-secondary]
     `,
   },
 };

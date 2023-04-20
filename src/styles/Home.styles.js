@@ -8,8 +8,8 @@ const styles = {
     border-y
     border-[--light-border-color]
     bg-[--light-background-color-secondary]
-    sm:border
-    sm:rounded-md
+    xs:border
+    xs:rounded-md
     dark:border-[--dark-border-color]
     dark:bg-[--dark-background-color-secondary]
   `,
@@ -28,7 +28,7 @@ const styles = {
     ring-[--light-accent]
     dark:ring-[--dark-accent]
     rounded-full
-  `
+  `,
 };
 
 export default styles;

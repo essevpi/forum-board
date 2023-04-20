@@ -1,12 +1,18 @@
 import Button from '../button';
-import NewPostForm from '../newPostForm';
+import { motion } from 'framer-motion';
 import { IoClose } from 'react-icons/io5';
 
 import styles from './Modal.styles';
 
-const Modal = ({ title, handleClose }) => {
+const Modal = ({ title, handleClose, children }) => {
   return (
-    <div className={styles.modalContainer} onClick={handleClose}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className={styles.modalContainer}
+      onClick={handleClose}
+    >
       {/* stopPropagation prevents modal closing when clicking modal */}
       <div className={styles.modalWindow} onClick={(e) => e.stopPropagation()}>
         <div className={styles.modalHeadingContainer}>
@@ -20,11 +26,9 @@ const Modal = ({ title, handleClose }) => {
             />
           </div>
         </div>
-        <div className='mt-2'>
-          <NewPostForm closeOnSubmit={handleClose} />
-        </div>
+        <div className={styles.modalBodyContainer}>{children}</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

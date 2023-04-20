@@ -8,7 +8,7 @@ const TabWindow = ({ items }) => {
   const [selectedTab, setSelectedTab] = useState(items[0]);
 
   return (
-    <div className='w-full'>
+    <div className={styles.tabWindowContainer}>
       <Tabs tabs={items} selectedTab={selectedTab} onSelect={setSelectedTab} />
       <AnimatePresence mode='wait'>
         <motion.div
@@ -16,9 +16,9 @@ const TabWindow = ({ items }) => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -10, opacity: 0 }}
           transition={{
-            duration: 0.2
+            duration: 0.2,
           }}
-          className='w-full flex items-center justify-center h-[400px]'
+          className={styles.tabWindowItem}
           key={selectedTab.label}
         >
           {selectedTab.item}

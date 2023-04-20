@@ -6,31 +6,47 @@ const styles = {
     self-stretch
     gap-4
     p-4
-    sm:bg-[--light-background-color-secondary]
-    sm:border
-    sm:border-[--light-border-color]
-    sm:rounded-md
-    dark:sm:bg-[--dark-background-color-secondary]
-    dark:sm:border-[--dark-border-color]    
+    xs:bg-[--light-background-color-secondary]
+    xs:border
+    xs:border-[--light-border-color]
+    xs:rounded-md
+    dark:xs:bg-[--dark-background-color-secondary]
+    dark:xs:border-[--dark-border-color]    
   `,
   headingContainer: `
-    flex    
-    items-end
-    justify-between
+    flex
+    flex-col
+    gap-2
+    xs:gap-0
+    xs:flex-row    
+    xs:items-end
+    xs:justify-between
     w-full
     border-b
     border-[--light-border-color]
     dark:border-[--dark-border-color]
-    pb-4
+    pb-2
   `,
   heading: `    
-    text-md
+    text-lg
+    uppercase
     md:text-xl
     font-medium
     leading-none
+    border-b
+    border-[--light-border-color]
+    dark:border-[--dark-border-color]
+    pb-2
+    xs:border-none
+  `,
+  actionsContainer: `
+    flex
+    justify-center
+    gap-2
   `,
   buttonContainer: `
-    sm:w-1/5
+    w-full
+    xs:min-w-fit
   `,
 };
 

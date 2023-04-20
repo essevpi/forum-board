@@ -22,15 +22,6 @@ const MainContainer = ({ children }) => {
       </motion.main>
     </AnimatePresence>
   );
-  /* return (
-      <main
-        key={router.asPath}
-        className={styles.container}
-        
-      >
-        {children}
-      </main>
-  ); */
 };
 
 export default MainContainer;

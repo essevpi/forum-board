@@ -1,41 +1,30 @@
-import { useContext, useEffect, useState } from 'react';
-import { UserDataContext, UsersContext } from '@/context/context';
+import { useContext, useEffect } from 'react';
+import { UserDataContext } from '@/context/context';
 import { useRouter } from 'next/router';
-import { motion } from 'framer-motion';
 import LoginForm from '@/components/loginForm';
-import Tabs from '@/components/tabWindow/tabs';
-
-import styles from '../styles/Home.styles';
 import TabWindow from '@/components/tabWindow';
 import SignupForm from '@/components/signupForm';
 
+import styles from '../styles/Home.styles';
+
 const Home = () => {
-  const { userData, setUserData } = useContext(UserDataContext); 
+  const { userData } = useContext(UserDataContext);
   const router = useRouter();
 
   useEffect(() => {
     if (userData.isLogged) router.push('/board');
-  }, []); 
-
-  /*  const handleLogOut = () => {
-    setUserData({
-      username: '',
-      password: '',
-      imgSrc: '',
-      isLogged: false,
-    });
-  }; */
+  }, [userData.isLogged]);
 
   const items = [
     {
       label: 'Login',
-      item: <LoginForm />
+      item: <LoginForm />,
     },
     {
       label: 'Signup',
-      item: <SignupForm />
+      item: <SignupForm />,
     },
-  ]
+  ];
 
   return (
     <div className={styles.container}>

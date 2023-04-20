@@ -12,14 +12,19 @@ html.dark {
   background: var(--dark-background-color);
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
+}
+
+a {
+  display: flex;
 }
 
 :root {
   /* Unit variables */
   --nav-height: 5rem;
-  
+
   /* Light Theme variables */
   --light-text-color: theme(colors.neutral.950);
   --light-text-hover-color: theme(colors.neutral.900/.7);
@@ -44,7 +49,7 @@ html, body {
 /* Dark Theme variables */
 @media (prefers-color-scheme: dark) {
   :root {
-    --dark-text-color: theme(colors.neutral.50);    
+    --dark-text-color: theme(colors.neutral.50);
     --dark-text-color-secondary: theme(colors.neutral.500);
     --dark-text-hover-color: theme(colors.neutral.200/.5);
     --dark-background-color: theme(colors.neutral.950);

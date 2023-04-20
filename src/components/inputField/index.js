@@ -25,9 +25,9 @@ const InputField = ({
         type={type ? `${type}` : 'text'}
         onChange={onInputChange}
         required={required ? true : false}
-        className={`${styles.input} ${textArea ? 'min-h-[100px] max-h-64' : ''} ${
-          textAreaStyle ? textAreaStyle : ''
-        }`}
+        className={`${styles.input} ${
+          textArea ? 'min-h-[100px] max-h-64' : ''
+        } ${textAreaStyle ? textAreaStyle : ''}`}
       />
     </div>
   );

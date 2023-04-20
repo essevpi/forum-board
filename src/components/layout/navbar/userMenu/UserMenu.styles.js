@@ -45,6 +45,7 @@ const styles = {
     border-[--light-border-color]
     dark:border-[--dark-border-color]
     pt-4
+    xs:pt-0
     xs:flex
     xs:items-center
     xs:gap-3

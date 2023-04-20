@@ -9,7 +9,7 @@ const styles = {
     border-b
     border-b-[--light-border-color]
     dark:border-b-[--dark-border-color]
-    sm:rounded-t-md 
+    xs:rounded-t-md 
     bg-[--light-background-color-tertiary]   
     dark:bg-[--dark-background-color-tertiary]
   `,
@@ -28,9 +28,6 @@ const styles = {
     cursor-pointer
     transition-colors
   `,
-  /* border-b
-    border-[--light-accent]
-    dark:border-[--dark-accent] */
   selected: `
     w-full
     flex
@@ -52,7 +49,7 @@ const styles = {
     h-[2px]
     bg-[--light-accent]
     dark:bg-[--dark-accent]
-  `
+  `,
 };
 
 export default styles;

@@ -14,12 +14,11 @@ const Error = ({ message, onTimeout }) => {
         setIsVisible(false);
         onTimeout();
       }, 3000);
-      
+
       return () => {
         clearTimeout(timer);
       };
     }
-
   }, [message]);
 
   return (

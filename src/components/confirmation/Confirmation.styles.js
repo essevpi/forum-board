@@ -1,21 +1,28 @@
 const styles = {
-  formContainer: `
+  container: `
     flex
+    gap-4
     flex-col
   `,
-  inputContainer: `
+  messageContainer: `
     flex
-    flex-col
-    gap-4
+    text-lg
+    justify-center
+    py-8
     border-b
     border-[--light-border-color]
     dark:border-[--dark-border-color]
-    py-4
   `,
   actionsContainer: `
-    pt-4    
-    sm:max-w-content
+    flex
+    justify-center
+    gap-2
+    sm:w-1/3
     sm:ml-auto
+  `,
+  buttonContainer: `
+    flex
+    w-full
   `,
 };
 

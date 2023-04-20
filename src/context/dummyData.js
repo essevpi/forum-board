@@ -39,36 +39,21 @@ export const initialUsers = [
 
 export const initialPosts = [
   {
-    title: 'Post 1',
-    content:
-      'Some long desc1 Some long desc1 Some long desc1 Some long desc1 Some long desc1 ',
-    author: 'User1',
+    title: 'Welcome to the forum!',
+    body: `This is a simple forum-like platform where you can create posts and comment them. Create a new post!`,
+    author: 'Admin',
     id: shortUUID.generate(),
     comments: [
       {
         author: 'User2378426',
         body: 'This is a comment',
+        id: shortUUID.generate(),
       },
       {
         author: 'User1265463',
         body: 'This is another comment',
+        id: shortUUID.generate(),
       },
     ],
-  },
-  {
-    title: 'Post 2',
-    content:
-      'Some long desc2 Some long desc2 Some long desc2 Some long desc2 Some long desc2 ',
-    author: 'User2',
-    id: shortUUID.generate(),
-    comments: [],
-  },
-  {
-    title: 'Post 3',
-    content:
-      'Some long desc3 Some long desc3 Some long desc3 Some long desc3 Some long desc3 ',
-    author: 'User3',
-    id: shortUUID.generate(),
-    comments: [],
   },
 ];

@@ -9,7 +9,6 @@ import styles from './NewPostForm.styles';
 const NewPostForm = ({ closeOnSubmit }) => {
   const { posts, setPosts } = useContext(PostsContext);
   const { userData } = useContext(UserDataContext);
-
   const [formData, setFormData] = useState({
     title: '',
     body: '',
@@ -26,34 +25,39 @@ const NewPostForm = ({ closeOnSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let newPost = { ...formData, id: shortUUID.generate(), comments: [] };
-    let posts = JSON.parse(localStorage.getItem('posts')) || [];
-    let updatedPosts = posts.concat(newPost);
+    let updatedPosts = [newPost, ...(posts || [])];
 
-    setPosts(posts.concat(newPost));
+    setPosts(updatedPosts);
     localStorage.setItem('posts', JSON.stringify(updatedPosts));
     closeOnSubmit();
   };
 
   return (
     <form className={styles.formContainer} onSubmit={handleSubmit}>
-      <div>
-        <InputField
-          value={formData.title}
-          name='title'
-          required
-          onInputChange={handleInputChange}
-        />
+      <div className={styles.inputContainer}>
+        <div>
+          <InputField
+            value={formData.title}
+            name='title'
+            placeholder='Post title'
+            required
+            onInputChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <InputField
+            value={formData.content}
+            name='body'
+            placeholder='Post content'
+            onInputChange={handleInputChange}
+            required
+            textArea
+          />
+        </div>
       </div>
-      <div>
-        <InputField
-          value={formData.content}
-          name='body'
-          onInputChange={handleInputChange}
-          required
-          textArea
-        />
+      <div className={styles.actionsContainer}>
+        <Button content='Create' variant='primary' canClick />
       </div>
-      <Button content='Create' variant='primary' canClick />
     </form>
   );
 };

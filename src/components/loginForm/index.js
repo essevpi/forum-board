@@ -7,14 +7,16 @@ import Error from '../error';
 
 import styles from './LoginForm.styles';
 
+const formInitialState = {
+  username: '',
+  password: '',
+};
+
 const LoginForm = () => {
-  const { users, setUsers } = useContext(UsersContext);
-  const { userData, setUserData } = useContext(UserDataContext);
+  const { users } = useContext(UsersContext);
+  const { setUserData } = useContext(UserDataContext);
   const [error, setError] = useState(null);
-  const [formData, setFormData] = useState({
-    username: '',
-    password: '',
-  });
+  const [formData, setFormData] = useState(formInitialState);
   const router = useRouter();
 
   const onInputChange = (e) => {
@@ -31,17 +33,16 @@ const LoginForm = () => {
 
     if (user) {
       if (user.password === formData.password) {
-        setUserData({ ...user, isLogged: true });
-        
-        localStorage.setItem('userData', JSON.stringify(user));
-        setFormData({
-          username: '',
-          password: '',
-        });
+        let loggedUser = { ...user, isLogged: true };
+        setUserData(loggedUser);
+
+        localStorage.setItem('userData', JSON.stringify(loggedUser));
+
+        setFormData(formInitialState);
         setError(null);
         router.push('/board');
       } else {
-        setError('Incorrect password.')
+        setError('Incorrect password.');
       }
     } else {
       setError('User not found.');
@@ -50,9 +51,6 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.formContainer}>
-      {/* <div className={styles.headingContainer}>
-        <h5>Login</h5>
-      </div> */}
       <div className={styles.errorContainer}>
         <Error message={error} onTimeout={() => setError(null)} />
       </div>

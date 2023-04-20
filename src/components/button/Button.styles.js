@@ -2,8 +2,9 @@ const styles = {
   button: {
     primary: `
       w-full
-      rounded-md  
-      p-1      
+      rounded-md
+      px-2  
+      py-1      
       font-bold
       uppercase              
       bg-[--light-accent]
@@ -31,6 +32,7 @@ const styles = {
     `,
     secondary: `
       w-full
+      px-2
       p-1
       font-bold
       uppercase     
@@ -39,6 +41,20 @@ const styles = {
       hover:bg-[--light-secondary-button-hover-color]
       dark:bg-[--dark-secondary-button-color]
       dark:hover:bg-[--dark-secondary-button-hover-color]
+      dark:hover:text-[--dark-text-hover-color]
+      transition-all
+    `,
+    'secondary-squared': `
+      w-full
+      p-2
+      font-bold
+      uppercase     
+      rounded-md       
+      bg-[--light-secondary-button-color]
+      hover:bg-[--light-secondary-button-hover-color]
+      dark:bg-[--dark-secondary-button-color]
+      dark:hover:bg-[--dark-secondary-button-hover-color]
+      dark:hover:text-[--dark-text-hover-color]
       transition-all
     `,
   },

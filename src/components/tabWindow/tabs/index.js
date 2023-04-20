@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 import styles from './Tabs.styles';
@@ -11,12 +10,14 @@ const Tabs = ({ tabs, selectedTab, onSelect }) => {
           <li
             key={i}
             className={`${
-              item === selectedTab ? styles['selected'] : styles['li']
+              item.label === selectedTab.label
+                ? styles['selected']
+                : styles['li']
             }`}
             onClick={() => onSelect(item)}
           >
             {item.label}
-            {item === selectedTab ? (
+            {item.label === selectedTab.label ? (
               <motion.div className={styles.underline} layoutId='underline' />
             ) : null}
           </li>

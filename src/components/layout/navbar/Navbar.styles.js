@@ -14,8 +14,7 @@ const styles = {
     flex
     items-center
     justify-between
-    px-4    
-    sm:p-0
+    px-4
     `,
   navbarLogo: `
     flex
@@ -46,8 +45,7 @@ const styles = {
   `,
   themeToggleContainer: `
     flex
-    pr-4
-  `
+  `,
 };
 
 export default styles;

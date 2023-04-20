@@ -8,15 +8,17 @@ import Button from '../button';
 
 import styles from './SignupForm.styles';
 
+const initialFormData = {
+  email: '',
+  username: '',
+  password: '',
+};
+
 const SignupForm = () => {
   const { users, setUsers } = useContext(UsersContext);
   const { userData, setUserData } = useContext(UserDataContext);
   const [error, setError] = useState(null);
-  const [formData, setFormData] = useState({
-    email: '',
-    username: '',
-    password: '',
-  });
+  const [formData, setFormData] = useState(initialFormData);
   const router = useRouter();
 
   const onInputChange = (e) => {
@@ -42,16 +44,19 @@ const SignupForm = () => {
         username: formData.username,
         password: formData.password,
         isLogged: true,
+        isAdmin: false,
       };
-      setFormData({
-        email: '',
-        username: '',
-        password: '',
-      });
-      setUsers(users.concat(newUser));
+      setFormData(initialFormData);
+
+      let updatedUsers = [...users, newUser];
+
       setUserData(newUser);
+      localStorage.setItem('userData', JSON.stringify(newUser));
+      setUsers(updatedUsers);
+      localStorage.setItem('users', JSON.stringify(updatedUsers));
+
       router.push('/board');
-    }    
+    }
   };
 
   return (

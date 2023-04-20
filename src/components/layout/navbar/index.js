@@ -20,10 +20,18 @@ const Navbar = () => {
           <span className={styles.navbarLogoText}>Board</span>
         </Link>
         <div className={styles.navbarControlsContainer}>
-          <div className={styles.themeToggleContainer}>
+          <div
+            className={`${styles.themeToggleContainer} ${
+              userData.isLogged ? 'pr-4' : ''
+            }`}
+          >
             <Toggle />
           </div>
-          <div className={styles.userMenuContainer}>
+          <div
+            className={`${styles.userMenuContainer} ${
+              userData.isLogged ? '' : 'hidden'
+            }`}
+          >
             {userData.isLogged && router.pathname !== '/' && (
               <UserMenu user={userData} />
             )}
