@@ -38,7 +38,6 @@ const Post = () => {
   const handleModal = (type, id) => {
     switch (type) {
       case 'deleteComment':
-        console.log('opened');
         setModalState({
           isOpen: true,
           title: 'Delete comment',
@@ -51,7 +50,31 @@ const Post = () => {
           ),
         });
         break;
+
+      case 'deletePost':
+        setModalState({
+          isOpen: true,
+          title: 'Delete post',
+          component: (
+            <Confirmation
+              message='Do you really want to delete this post?'
+              onCancel={() => setModalState(initialModalState)}
+              onConfirm={() => handleDeletePost(id)}
+            />
+          ),
+        });
+        break;
     }
+  };
+
+  const handleDeletePost = (id) => {
+    let updatedPosts = posts.filter((p) => p.id !== id);
+
+    setPosts(updatedPosts);
+    localStorage.setItem('posts', JSON.stringify(updatedPosts));
+    setModalState(initialModalState);
+
+    router.push('/board');
   };
 
   const handleDeleteComment = (id) => {
@@ -124,6 +147,8 @@ const Post = () => {
             <Button
               content={<IoTrash size='1.5rem' />}
               variant='secondary-squared'
+              onClick={() => handleModal('deletePost', post.id)}
+              canClick
             />
           </div>
           <div className={styles.post.buttonContainer}>
