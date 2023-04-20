@@ -143,14 +143,16 @@ const Post = () => {
           <span className={styles.post.author}>Posted by {post?.author}</span>
         </div>
         <div className={styles.post.actionsContainer}>
-          <div className={styles.post.buttonContainer}>
-            <Button
-              content={<IoTrash size='1.5rem' />}
-              variant='secondary-squared'
-              onClick={() => handleModal('deletePost', post.id)}
-              canClick
-            />
-          </div>
+          {(userData.isAdmin || userData.username === post?.author) && (
+            <div className={styles.post.buttonContainer}>
+              <Button
+                content={<IoTrash size='1.5rem' />}
+                variant='secondary-squared'
+                onClick={() => handleModal('deletePost', post.id)}
+                canClick
+              />
+            </div>
+          )}
           <div className={styles.post.buttonContainer}>
             <Link href='/board'>
               <Button
