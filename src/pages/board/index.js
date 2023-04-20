@@ -90,7 +90,7 @@ const Board = () => {
   return (
     <div className={styles.container}>
       <div className={styles.headingContainer}>
-        <span className={styles.heading}>Posts{userData.isLogged ? 'y' : 'n'}</span>
+        <span className={styles.heading}>Posts</span>
         <div className={styles.actionsContainer}>
           {/* DELETE ALL POSTS BUTTON - ADMIN ONLY */}
           {userData.isAdmin && (
